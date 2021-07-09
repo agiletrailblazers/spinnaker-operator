@@ -1,9 +1,8 @@
 resources:
 - spinnakerservice.yml
-  #- azure-kubernetes-patch.yml
 # Apply the patches top down order
 patchesStrategicMerge:
-- docker-patch.yml  
+#- docker-patch.yml  
 - azure-kubernetes-patch.yml
   #- config-patch.yml
   #- profiles-patch.yml

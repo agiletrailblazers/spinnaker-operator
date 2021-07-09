@@ -18,37 +18,6 @@ spec:
           storageContainerName: spinnaker
       features:
         artifacts: true       
-        #providers:
-        #dockerRegistry:
-        # enabled: true
-        # accounts:
-        # - name: atb-docker-registry
-        #   requiredGroupMembership: []
-        #   providerVersion: V2
-        #   permissions: {}
-        #   address: https://index.docker.io
-        #   username: agiletrailblazers
-        #   password: password1234
-        #   email: info@agiletrailblazers.com
-        #   cacheIntervalSeconds: 30
-        #   clientTimeoutMillis: 60000
-        #   cacheThreads: 1
-        #   paginateSize: 100
-        #   sortTagsByDate: false
-        #   trackDigests: false
-        #   insecureRegistry: false
-        # primaryAccount: atb-docker-registry
-        #kubernetes:
-        # enabled: true
-        #  accounts:
-        # - name: azdok8saccount
-        #   providerVersion: V2
-        #   cacheThreads: 1
-        #   kubeconfigFile: encryptedFile:k8s!n:spin-secret!k:config
-        #   onlySpinnakerManaged: false
-        #   dockerRegistries:
-        #   - accountName: atb-docker-registry
-        # primaryAccount: azdok8saccount
   # spec.expose - This section defines how Spinnaker should be publicly exposed
   expose:
     type: service  # Kubernetes LoadBalancer type (service/ingress), note: only "service" is supported for now

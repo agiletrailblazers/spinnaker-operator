@@ -17,7 +17,7 @@ spec:
             permissions: {}
             address: https://index.docker.io
             username: agiletrailblazers
-            password: password123
+            password: password
             email: info@agiletrailblazers.com
             cacheIntervalSeconds: 30
             clientTimeoutMillis: 60000
