@@ -12,26 +12,6 @@ spec:
           storageAccountName: spinnakerstorageacct01
           storageAccountKey: jVPqPYjw7H1LtDxesoEPZD2GFlBWBFYkzUmIj8MgnOjIjfhbusVlYJmbTSHO9T5XKKXvTkNEc+IQxBQdabQIlQ==
           storageContainerName: spinnaker
-      providers:
-        kubernetes:
-        enabled: true
-        accounts:
-          - name: azdo-k8s-account
-            requiredGroupMembership: []
-            providerVersion: V1
-            permissions: {}
-            configureImagePullSecrets: true
-            cacheThreads: 1
-            namespaces: []
-            omitNamespaces: []
-            kinds: []
-            omitKinds: []
-            customResources: []
-            cachingPolicies: []
-            kubeconfigFile: /home/azureuser/.kube/config
-            oAuthScopes: []
-            onlySpinnakerManaged: false
-        primaryAccount: azdo-k8s-account      
   # spec.expose - This section defines how Spinnaker should be publicly exposed
   expose:
     type: service  # Kubernetes LoadBalancer type (service/ingress), note: only "service" is supported for now

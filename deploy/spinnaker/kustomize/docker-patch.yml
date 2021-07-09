@@ -1,0 +1,29 @@
+apiVersion: spinnaker.io/v1alpha2
+kind: SpinnakerService
+metadata:
+  name: spinnaker
+spec:
+  spinnakerConfig:
+    config:
+      features:
+        artifacts: true
+      providers:
+        dockerRegistry:
+          enabled: true
+          accounts:
+          - name: atb-docker-registry
+            requiredGroupMembership: []
+            providerVersion: V1
+            permissions: {}
+            address: https://index.docker.io
+            username: agiletrailblazers
+            password: password123
+            email: info@agiletrailblazers.com
+            cacheIntervalSeconds: 30
+            clientTimeoutMillis: 60000
+            cacheThreads: 1
+            paginateSize: 100
+            sortTagsByDate: false
+            trackDigests: false
+            insecureRegistry: false
+          primaryAccount: atb-docker-registry      

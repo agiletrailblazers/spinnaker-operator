@@ -1,0 +1,26 @@
+apiVersion: spinnaker.io/v1alpha2
+kind: SpinnakerService
+metadata:
+  name: spinnaker
+spec:
+  spinnakerConfig:
+    config:
+      providers:
+        kubernetes:
+         enabled: true
+         accounts:
+         - name: azdo-k8s-account
+           providerVersion: V2
+           permissions: {}
+           configureImagePullSecrets: true
+           cacheThreads: 1
+           namespaces: []
+           omitNamespaces: []
+           kinds: []
+           omitKinds: []
+           customResources: []
+           cachingPolicies: []
+           kubeconfigFile: encryptedFile:k8s!n:spin-secret!k:config
+           oAuthScopes: []
+           onlySpinnakerManaged: false
+         primaryAccount: azdo-k8s-account

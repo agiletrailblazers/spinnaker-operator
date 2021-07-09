@@ -12,26 +12,42 @@ spec:
           storageAccountName: spinnakerstorageacct01
           storageAccountKey: jVPqPYjw7H1LtDxesoEPZD2GFlBWBFYkzUmIj8MgnOjIjfhbusVlYJmbTSHO9T5XKKXvTkNEc+IQxBQdabQIlQ==
           storageContainerName: spinnaker
+      features:
+        artifacts: true       
       providers:
-        kubernetes:
-        enabled: true
-        accounts:
-          - name: azdo-k8s-account
+        dockerRegistry:
+          enabled: true
+          accounts:
+          - name: atb-docker-registry
             requiredGroupMembership: []
             providerVersion: V1
             permissions: {}
-            configureImagePullSecrets: true
+            address: https://index.docker.io
+            username: agiletrailblazers
+            password: password123
+            email: info@agiletrailblazers.com
+            cacheIntervalSeconds: 30
+            clientTimeoutMillis: 60000
             cacheThreads: 1
-            namespaces: []
-            omitNamespaces: []
-            kinds: []
-            omitKinds: []
-            customResources: []
-            cachingPolicies: []
+            paginateSize: 100
+            sortTagsByDate: false
+            trackDigests: false
+            insecureRegistry: false
+            repositories:
+              - agiletrailbazers/tomcat
+          primaryAccount: atb-docker-registry
+        kubernetes:
+          enabled: true
+          accounts:
+          - name: azdok8saccount
+            providerVersion: V2
+            cacheThreads: 1
             kubeconfigFile: /home/azureuser/.kube/config
-            oAuthScopes: []
             onlySpinnakerManaged: false
-        primaryAccount: azdo-k8s-account      
+            dockerRegistries:
+              - accountName: atb-docker-registry
+                namespaces: []
+          primaryAccount: azdok8saccount
   # spec.expose - This section defines how Spinnaker should be publicly exposed
   expose:
     type: service  # Kubernetes LoadBalancer type (service/ingress), note: only "service" is supported for now
