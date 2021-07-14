@@ -2,7 +2,7 @@
 # Example configuration for securing spinnaker with basic authentication. Not recommended for Production use.
 #
 #-----------------------------------------------------------------------------------------------------------------
-apiVersion: spinnaker.armory.io/v1alpha2
+apiVersion: spinnaker.io/v1alpha2
 kind: SpinnakerService
 metadata:
   name: spinnaker
