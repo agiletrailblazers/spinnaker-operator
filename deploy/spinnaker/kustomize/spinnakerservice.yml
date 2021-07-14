@@ -18,7 +18,7 @@ spec:
           storageContainerName: spinnaker
       features:
         artifacts: true       
-  # spec.expose - This section defines how Spinnaker should be publicly exposed
+  # spec.expose - This section defines how Spinnaker should be publicly exposed.
   expose:
     type: service  # Kubernetes LoadBalancer type (service/ingress), note: only "service" is supported for now.
     service:
