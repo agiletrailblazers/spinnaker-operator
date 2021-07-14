@@ -3,7 +3,7 @@
 #
 # Documentation: https://docs.armory.io/docs/spinnaker-user-guides/github/
 #-----------------------------------------------------------------------------------------------------------------
-apiVersion: spinnaker.armory.io/v1alpha2
+apiVersion: spinnaker.io/v1alpha2
 kind: SpinnakerService
 metadata:
   name: spinnaker
@@ -15,7 +15,7 @@ spec:
           enabled: true
           accounts:
           - name: github
-            token: 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            # (Secret). GitHub token.
+            token: encrypted:k8s!n:git-secret!k:gittoken            # (Secret). GitHub token.
 #            tokenFile: encryptedFile:k8s!n:spin-secrets!k:github-tokenfile # (Secret). File containing a github authentication token.
 #            username: abc                                                  # GitHub username.
 #            password: encrypted:k8s!n:spin-secrets!k:github-password       # (Secret). GitHub password.
