@@ -5,7 +5,8 @@ patchesStrategicMerge:
 #- docker-patch.yml  
 - azure-kubernetes-patch.yml
 - patch-github.yml
-- patch-gitrepo.yml  
+- patch-gitrepo.yml 
+- patch-basic-auth.yml  
   #- config-patch.yml
   #- profiles-patch.yml
   #- files-patch.yml
