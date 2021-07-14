@@ -9,7 +9,7 @@ spec:
         enabled: true      
   spinnakerConfig:
     config:
-      version: 1.26.6   # the version of Spinnaker to be deployed
+      version: 1.25.6   # the version of Spinnaker to be deployed
       persistentStorage:
         persistentStoreType: azs
         azs:
