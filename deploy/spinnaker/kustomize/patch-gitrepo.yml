@@ -15,6 +15,9 @@ spec:
           - name: gitrepo
             username: sananda1                # Git username.
             token: encrypted:k8s!n:git-secret!k:gittoken # (Secret). Git token.
+          - name: adogitrepo
+            username: skumar                # Git username.
+            token: encrypted:k8s!n:spin-ado-repo!k:gittoken # (Secret). Git token.  
 #            password: xyz                    # (Secret). Git password.
 #            tokenFile: token.txt             # (Secret). File containing a Git authentication token. File needs to be present on the machine running Spinnaker.
 #            usernamePasswordFile: creds.txt  # (Secret). File containing “username:password” to use for GitHub authentication. File needs to be present on the machine running Spinnaker.
