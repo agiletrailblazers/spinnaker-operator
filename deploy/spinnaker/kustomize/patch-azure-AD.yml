@@ -1,0 +1,29 @@
+apiVersion: spinnaker.io/v1alpha2
+kind: SpinnakerService
+metadata:
+  name: spinnaker
+spec:
+  spinnakerConfig:
+    config:
+      security:
+        authn:
+          oauth2:
+            enabled: true
+            client:
+              clientId: encrypted:k8s!n:spin-azure-ad-secret!k:clientID
+              clientSecret: encrypted:k8s!n:spin-azure-ad-secret!k:secretID
+              accessTokenUri: https://login.microsoftonline.com/a858d9da-8dfa-4b12-9f90-d0448a34f6d1/oauth2/token
+              userAuthorizationUri: https://login.microsoftonline.com/a858d9da-8dfa-4b12-9f90-d0448a34f6d1/oauth2/authorize?resource=https://graph.windows.net
+              clientAuthenticationScheme: query
+              scope: profile
+            # You may want to restrict access to your Spinnaker by adding
+            # userInfoRequirements to further restrict access beyond beyond simply
+            # requiring that users have a valid account in your Azure AD Tenant.
+            userInfoRequirements: {}
+            resource:
+              userInfoUri: https://graph.windows.net/me?api-version=1.6
+            userInfoMapping:
+              email: skumar@cirruslabs.io
+              firstName: Sasi
+              lastName: Kumar
+            provider: AZURE            
