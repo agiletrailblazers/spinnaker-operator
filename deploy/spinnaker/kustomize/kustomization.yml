@@ -6,6 +6,7 @@ patchesStrategicMerge:
 - azure-kubernetes-patch.yml
 - patch-github.yml
 - patch-gitrepo.yml 
+- patch-canary.yml
 #- patch-azure-AD.yml
   #- patch-basic-auth.yml  
   #- config-patch.yml
